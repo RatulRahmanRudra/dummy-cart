@@ -9,7 +9,6 @@ import Product from './Product';
 const ProductList = () => {
   const dispatch = useDispatch();
   
-  const test = 'inside product list';
   const products = useSelector(state => state.allProducts.products);
   const loading = useSelector(state => state.allProducts.isLoading);
   // console.log(products);
@@ -32,17 +31,17 @@ const ProductList = () => {
   
   return (
     <>
-      {test}
-      {loading &&  <Loading/>} 
-      <div className="flex flex-wrap justify-center items-start">
-       { products.map((product) => 
-          <Product 
-            key={product.id}
-            product={product}
-          /> 
-        )
-      }
-      </div> 
+      {loading ? (<Loading/>) : ( 
+        <div className="flex flex-wrap justify-center items-start">
+        { products.map((product) => 
+            <Product 
+              key={product.id}
+              product={product}
+            /> 
+          )
+        }
+        </div> 
+      )}
     </>
   )
 }
