@@ -5,9 +5,14 @@ export const setProducts = (products) => ({
     payload: products
   })
 
-export const selecteddProduct = (product) => ({
+export const selectedProduct = (product) => ({
   type: actionTypes.selectedProduct,
   payload: product
+})
+
+export const setLoading = (loadingState) => ({
+  type: actionTypes.setLoading,
+  payload: loadingState
 })
 
 // export const removeSelectedProduct = (product) => ({
